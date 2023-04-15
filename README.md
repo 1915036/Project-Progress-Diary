@@ -16,5 +16,13 @@
 
 :arrow_right: **(26-31)-03-23:**
 
+1.To track the Teachers activites check all the possibilities like teacher or user logs,today losgs.
+2.In Report section get the reports of particular coures and the acctivites og user in the courses.
+3.Add the *Report Builder* API in moodle.
+- **Report builder api** 
+System reports are a consistent way of providing reporting data, with paging, filtering, exporting standardized across them. Once the groundwork is done in defining the report elements in entities, it's possible to implement them with minimal code just by adding entities to the report, and defining which elements you want to use from them. 
+
+- 
+
 
 
