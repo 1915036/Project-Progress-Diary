@@ -58,7 +58,7 @@ System reports are a consistent way of providing reporting data, with paging, fi
 
 2. Check all the database table and start searching the user and their role(editing techer),id,course id,attendance activity,time modified and all.
  
- 3.Create the sql query:
+3. Create the sql query:
  
  SELECT   u.id, CONCAT(u.firstname, ' ', u.lastname) AS TeacherName, c.id AS course_id, c.fullname AS course_name , la.target, FROM_UNIXTIME(la.timecreated, '%Y-%m-%d %H:%i:%s') AS Time FROM     mdl_user u JOIN     mdl_role_assignments ra ON ra.userid = u.id JOIN
 mdl_context cxt ON cxt.id = ra.contextid JOIN     mdl_course c ON c.id = cxt.instanceid AND c.visible = 1 JOIN     mdl_role r ON r.id = ra.roleid AND r.shortname = 'editingteacher' JOIN mdl_logstore_standard_log la on la.userid = u.id WHERE la.component = "mod_attendance" and la.target != "report" and  u.deleted = 0 ORDER BY     u.lastname,     u.firstname,     c.fullname
