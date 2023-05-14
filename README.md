@@ -35,6 +35,30 @@ System reports are a consistent way of providing reporting data, with paging, fi
 
 3.The api integration work in moodle setting is done by doing the work on webservices and manage protocol.
 
+➡️ **(15-31)-03-23**
+
+1.After complete the moodle work we get problem in frappe interface regarding not getting the required output.
+
+2.Decided to do the work using backend and moodle database.
+
+3.start working on the moodle database .
+
+➡️ **(03-14)-04-23**
+
+1. working on moodle database, tryed lot of sql query t get the table which fulfil the requirement.
+
+2.Decided to create the own query to get the output.
+- Check all the tables of moodle database.
+- Check attendance ,user, course related table.
+- Find the relation and describe the tables.
+
+➡️ **Till Now**
+
+1. Create number of queries but didnot get the output.
+2. Check all the database table and start searching the user and their role(editing techer),id,course id,attendance activity,time modified and all.
+3. '''SELECT   u.id, CONCAT(u.firstname, ' ', u.lastname) AS TeacherName, c.id AS course_id, c.fullname AS course_name , la.target, FROM_UNIXTIME(la.timecreated, '%Y-%m-%d %H:%i:%s') AS Time FROM     mdl_user u JOIN     mdl_role_assignments ra ON ra.userid = u.id JOIN
+mdl_context cxt ON cxt.id = ra.contextid JOIN     mdl_course c ON c.id = cxt.instanceid AND c.visible = 1 JOIN     mdl_role r ON r.id = ra.roleid AND r.shortname = 'editingteacher' JOIN mdl_logstore_standard_log la on la.userid = u.id WHERE la.component = "mod_attendance" and la.target != "report" and  u.deleted = 0 ORDER BY     u.lastname,     u.firstname,     c.fullname'''
+
 
 
 
